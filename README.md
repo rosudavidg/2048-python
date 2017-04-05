@@ -3,10 +3,6 @@
 ```
 $ git clone https://github.com/rosudavidg/2048-python.git
 ```
-### Build
-```
-$ make build
-```
 ### Play
 ```
 $ python main.py
@@ -15,7 +11,10 @@ $ python main.py
 ```
 $ make
 ```
-
+### Clean
+```
+$ make clean
+```
 #### OS: Linux
 
 #### E-mail
