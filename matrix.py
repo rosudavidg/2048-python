@@ -145,3 +145,10 @@ def check_end(matrix1, matrix2, matrix3, matrix4):
     ok3 = check_eq(matrix3, matrix4)
 
     return ok1 * ok2 * ok3
+
+def sum(matrix):
+    sum = 0
+    for i in range(0,4):
+        for j in range(0,4):
+            sum += matrix[i][j]
+    return sum

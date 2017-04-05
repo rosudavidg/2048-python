@@ -17,6 +17,9 @@ def draw_first_board(screen):
     pygame.draw.rect(screen,grey_color,(0,410,425,5))
     pygame.draw.rect(screen,grey_color,(0,515,425,5))
 
+    #pygame.draw.rect(screen,blue_color,(25,25,160,45))
+    screen.blit(get_image('./src/images/image_new_game.png'), (25, 25))
+
 def put_images(matrix, screen):
     for i in range(0,4):
         for j in range(0,4):
