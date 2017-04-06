@@ -1,9 +1,11 @@
 import pygame
 import os
+pygame.init()
 from get_image import *
 from pygame.locals import *
 from board import *
 from matrix import *
+
 screen = pygame.display.set_mode((w_size, h_size), DOUBLEBUF)
 screen.fill(black_color)
 draw_first_board(screen)
@@ -102,9 +104,15 @@ while running:
                 matrix_left = move_left(matrix_left)
 
                 if check_end(matrix_up, matrix_down, matrix_left, matrix_right) == 1:
-                    score = sum(matrix)
-                    print("Score:" + str(score))
                     game_on = False
+                    score = sum(matrix)
+                    label = score_font.render("SCORE:  " + str(score), 1, red_color)
+                    screen.blit(label, (200, 27)) 
+
+            if game_on == True:
+                score = sum(matrix)
+                label = score_font.render("SCORE:  " + str(score), 1, yellow_color)
+                screen.blit(label, (200, 27)) 
 
             put_images(matrix, screen)
 
