@@ -1,8 +1,4 @@
 # 2048-python
-<p align="center">
-  <img src="/src/example.png"/>
-</p>
-
 
 ## Install
 ```
