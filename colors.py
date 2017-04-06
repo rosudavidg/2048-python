@@ -1,7 +1,7 @@
 import pygame
 w_size = 425
 h_size = 520
-blue_color = (0,0,100)
+blue_color = (59, 121, 221)
 black_color = (50,50,50)
 grey_color = (70,70,70)
 yellow_color = (255,215,0)

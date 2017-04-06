@@ -5,6 +5,10 @@ from get_image import *
 from pygame.locals import *
 from board import *
 from matrix import *
+from read_and_write import *
+
+max_score = 0
+max_score = read_score(max_score)
 
 pygame.display.set_caption("2048")
 
@@ -109,13 +113,26 @@ while running:
                 if check_end(matrix_up, matrix_down, matrix_left, matrix_right) == 1:
                     game_on = False
                     score = sum(matrix)
-                    label = score_font.render("SCORE:  " + str(score), 1, red_color)
-                    screen.blit(label, (200, 27)) 
+                    label_score = score_font.render("SCORE:    " + str(score), 1, red_color)
+                    screen.blit(label_score, (170, 27))
 
+                    if score > max_score:
+                        write(score)
+                        max_score = score
+                        label_score_max = score_font.render("NEW RECORD:  " + str(max_score), 1, yellow_color)
+                        screen.blit(label_score_max, (170, 57))
+                    else:
+                        label_score_max = score_font.render("RECORD:  " + str(max_score), 1, blue_color)
+                        screen.blit(label_score_max, (170, 57))
+                
             if game_on == True:
                 score = sum(matrix)
-                label = score_font.render("SCORE:  " + str(score), 1, yellow_color)
-                screen.blit(label, (200, 27)) 
+
+                label_score = score_font.render("SCORE:     " + str(score), 1, yellow_color)
+                screen.blit(label_score, (170, 27))
+
+                label_score_max = score_font.render("RECORD:  " + str(max_score), 1, blue_color)
+                screen.blit(label_score_max, (170, 57)) 
 
             put_images(matrix, screen)
 
