@@ -6,6 +6,8 @@ from pygame.locals import *
 from board import *
 from matrix import *
 
+pygame.display.set_caption("2048")
+
 screen = pygame.display.set_mode((w_size, h_size), DOUBLEBUF)
 screen.fill(black_color)
 draw_first_board(screen)
@@ -18,6 +20,7 @@ matrix_right = [[None] * 4] * 4
 
 running = True
 reset = True
+
 # While game is running
 while running:
     for event in pygame.event.get():
@@ -56,7 +59,7 @@ while running:
         game_on = True
         reset = False
 
-# Game is on
+    # Game is on
     while game_on:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
