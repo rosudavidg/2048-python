@@ -2,6 +2,9 @@ import pygame
 import os
 from random import randint
 
+first_nr = 2
+second_nr = 4
+
 def zeroes(matrix):
     matrix = [[0, 0 ,0, 0], [0, 0 ,0, 0], [0, 0 ,0, 0], [0, 0 ,0, 0]]
     return matrix
@@ -16,21 +19,13 @@ def initialize(matrix):
             rnd_j = randint(0,3)
 
         percent = randint(0,99)
-        number = 2
+        number = first_nr
 
         if percent > 90:
-            number = 4
+            number = second_nr
 
         matrix[rnd_i][rnd_j] = number
     return matrix
-
-def check_if_exists(matrix):
-    ok = 0
-    for i in range(0,4):
-        for j in range(0,4):
-            if matrix[i][j] == 0:
-                ok = 1
-    return ok
 
 def add_random_number(matrix):
     rnd_i = randint(0,3)
@@ -41,10 +36,10 @@ def add_random_number(matrix):
         rnd_j = randint(0,3)
 
     percent = randint(0,99)
-    number = 2
+    number = first_nr
 
     if percent > 90:
-        number = 4
+        number = second_nr
 
     matrix[rnd_i][rnd_j] = number
 
@@ -71,28 +66,6 @@ def move_up(matrix):
                     matrix[k][j] = 0
 
     return matrix
-
-def move_down_retarded_mode(matrix):
-	for j in range(0,4):
-		for i in range(2, -1, -1):
-			if matrix[i][j] != 0:
-			    k = i;
-			    while (k < 3):
-					if(matrix[k + 1][j] == 0):
-					    matrix[k + 1][j] = matrix[k][j]
-					    matrix[k][j] = 0
-					k = k + 1
-
-	for j in range(0,4):
-		for i in range(3, 0, -1):
-			if(matrix[i][j] != 0) & (matrix[i][j] == matrix[i - 1][j]):
-			    matrix[i][j] *= 2
-			    matrix[i - 1][j] = 0
-			    for k in range(i - 2, -1, -1):
-					matrix[k + 1][j] = matrix[k][j]
-					matrix[k][j] = 0
-
-	return matrix
 
 def rotate_clockwise(matrix):
     rotate = [[None] * 4] * 4
@@ -140,11 +113,11 @@ def check_eq(matrix1, matrix2):
     return 1
 
 def check_end(matrix1, matrix2, matrix3, matrix4):
-    ok1 = check_eq(matrix1, matrix2)
-    ok2 = check_eq(matrix2, matrix3)
-    ok3 = check_eq(matrix3, matrix4)
+    ok_1 = check_eq(matrix1, matrix2)
+    ok_2 = check_eq(matrix2, matrix3)
+    ok_3 = check_eq(matrix3, matrix4)
 
-    return ok1 * ok2 * ok3
+    return ok_1 * ok_2 * ok_3
 
 def sum(matrix):
     sum = 0

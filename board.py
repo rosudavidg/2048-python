@@ -2,6 +2,7 @@ import pygame
 import os
 from colors import *
 from get_image import *
+from buttons import *
 def draw_first_board(screen):
     # Vertical lines
     pygame.draw.rect(screen,grey_color,(0,100,5,425))
@@ -18,7 +19,8 @@ def draw_first_board(screen):
     pygame.draw.rect(screen,grey_color,(0,515,425,5))
 
     #pygame.draw.rect(screen,blue_color,(25,25,160,45))
-    screen.blit(get_image('./src/images/image_new_game.png'), (25, 25))
+    screen.blit(get_image('./src/images/image_new_game.png'), btn_newgame_L)
+    screen.blit(get_image('./src/images/image_undo.png'), btn_undo_L)
 
 def put_images(matrix, screen):
     for i in range(0,4):
