@@ -21,4 +21,4 @@ $ make clean
 ```
 #### OS: Linux
 
-#### E-mail : <DavidRosuGabriel@gmail.com>
+#### E-mail : <RosuDavidGabriel@gmail.com>
