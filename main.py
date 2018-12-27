@@ -77,8 +77,8 @@ while running:
     while game_on:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-	    		running = False
-	    		game_on = False
+                running = False
+                game_on = False
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 x, y = event.pos

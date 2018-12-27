@@ -48,13 +48,13 @@ def add_random_number(matrix):
 def move_up(matrix):
     k = 0
     for j in range(0,4):
-		for i in range(1,4):
-			if(matrix[i][j] != 0):
-				k = i
-				while (k > 0) & (matrix[k - 1][j] == 0):
-					matrix[k - 1][j] = matrix[k][j]
-					matrix[k][j] = 0
-					k = k - 1
+        for i in range(1,4):
+            if(matrix[i][j] != 0):
+                k = i
+                while (k > 0) & (matrix[k - 1][j] == 0):
+                    matrix[k - 1][j] = matrix[k][j]
+                    matrix[k][j] = 0
+                    k = k - 1
 
     for j in range(0, 4):
         for i in range(0, 3):
